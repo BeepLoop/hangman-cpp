@@ -58,6 +58,7 @@ int main() {
   bool gameOver = false;
   char input;
   std::string toReveal = initGuesses(wordToGuess.size());
+  std::vector<char> guesses;
 
   std::cout << "Welcome to Hangman! You have 6 incorrect guesses\n";
 
@@ -68,18 +69,21 @@ int main() {
     std::cout << "Input a letter: ";
     std::cin >> input;
 
-    if (hasLetter(wordToGuess, input)) {
-      if (!alreadyGuessed(toReveal, input)) {
-        toReveal = reveal(toReveal, wordToGuess, input);
+    if (alreadyGuessed(guesses, input)) {
+      std::cout << "You already tried that letter" << std::endl;
+      continue;
+    }
 
-        if (haveWon(toReveal)) {
-          std::cout << "The word is: ";
-          printToReveal(wordToGuess, false);
-          std::cout << "You WON!" << std::endl;
-          gameOver = true;
-        }
-      } else {
-        std::cout << "You already guessed that letter" << std::endl;
+    guesses.push_back(input);
+
+    if (hasLetter(wordToGuess, input)) {
+      toReveal = reveal(toReveal, wordToGuess, input);
+
+      if (haveWon(toReveal)) {
+        std::cout << "The word is: ";
+        printToReveal(wordToGuess, false);
+        std::cout << "You WON!" << std::endl;
+        gameOver = true;
       }
     } else {
       incorrectGuesses--;

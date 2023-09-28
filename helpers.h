@@ -36,9 +36,9 @@ bool hasLetter(std::string &word, char &letter) {
   return false;
 }
 
-bool alreadyGuessed(std::string &toReveal, char &letter) {
-  for (int i = 0; i < toReveal.size(); ++i) {
-    if (letter == toReveal[i]) {
+bool alreadyGuessed(std::vector<char> &guesses, char &letter) {
+  for (int i = 0; i < guesses.size(); ++i) {
+    if (letter == guesses[i]) {
       return true;
     }
   }
