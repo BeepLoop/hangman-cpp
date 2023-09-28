@@ -8,7 +8,8 @@ std::vector<std::string> constructWords(const std::string &filename) {
   std::string str;
   std::vector<std::string> words;
   std::ifstream reader;
-  reader.open(filename);
+  std::string base = "./categories/";
+  reader.open(base.append(filename));
 
   while (std::getline(reader, str)) {
     words.push_back(str);

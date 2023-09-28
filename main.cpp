@@ -19,27 +19,27 @@ std::vector<std::string> categorySelector() {
 
   switch (choice) {
   case 1: {
-    words = constructWords("./categories/science.txt");
+    words = constructWords("science.txt");
     break;
   }
   case 2: {
-    words = constructWords("./categories/geography.txt");
+    words = constructWords("geography.txt");
     break;
   }
   case 3: {
-    words = constructWords("./categories/food.txt");
+    words = constructWords("food.txt");
     break;
   }
   case 4: {
-    words = constructWords("./categories/school.txt");
+    words = constructWords("school.txt");
     break;
   }
   case 5: {
-    words = constructWords("./categories/math.txt");
+    words = constructWords("math.txt");
     break;
   }
   case 6: {
-    words = constructWords("./categories/history.txt");
+    words = constructWords("history.txt");
     break;
   }
   default: {
