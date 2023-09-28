@@ -4,7 +4,6 @@ theory
 biology
 chemistry
 physics
-astronomy
 geology
 ecology
 genetics
@@ -48,3 +47,4 @@ friction
 ozone
 skeleton
 dinosaur
+liquid

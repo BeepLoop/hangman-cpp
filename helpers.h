@@ -4,11 +4,11 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> constructWords() {
+std::vector<std::string> constructWords(const std::string &filename) {
   std::string str;
   std::vector<std::string> words;
   std::ifstream reader;
-  reader.open("words.txt");
+  reader.open(filename);
 
   while (std::getline(reader, str)) {
     words.push_back(str);

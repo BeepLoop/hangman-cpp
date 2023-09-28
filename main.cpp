@@ -3,8 +3,46 @@
 #include <string>
 #include <vector>
 
+std::vector<std::string> categorySelector() {
+  std::cout << "Choose a category" << std::endl;
+  std::cout << "[1] Science" << std::endl;
+  std::cout << "[2] Geography" << std::endl;
+  std::cout << "[3] Foods" << std::endl;
+  std::cout << "[4] School" << std::endl;
+
+  std::vector<std::string> words;
+
+  int choice;
+  std::cin >> choice;
+
+  switch (choice) {
+  case 1: {
+    words = constructWords("science.txt");
+    break;
+  }
+  case 2: {
+    words = constructWords("geography.txt");
+    break;
+  }
+  case 3: {
+    words = constructWords("food.txt");
+    break;
+  }
+  case 4: {
+    words = constructWords("school.txt");
+    break;
+  }
+  default: {
+    std::cerr << "Invalid choice" << std::endl;
+    break;
+  }
+  }
+
+  return words;
+}
+
 int main() {
-  std::vector<std::string> words = constructWords();
+  std::vector<std::string> words = categorySelector();
   std::string wordToGuess = generateRandomWord(words);
   int incorrectGuesses = 6;
   bool gameOver = false;
